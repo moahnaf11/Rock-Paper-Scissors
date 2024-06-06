@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    <script>
+        function getComputerChoice () {
+            let num = Math.random()
+            if (num <= 0.5) {
+                return "rock"
+            }  else if (num > 0.5 && num <= 0.75) {
+                return "paper"
+            }  else {return "scissors"}
+        }
+        
+        function getHumanChoice() {
+            let answer = prompt("Type rock, paper or scissors!")
+            return answer 
+        }
+
+        function playGame () {
+            let humanScore = 0;
+            let computerScore = 0;
+            let round = 1;
+            function playRound(humanChoice, computerChoice) {
+                let humanAnswer = humanChoice.toLowerCase()
+                if (humanAnswer == "rock" && computerChoice == "scissors") {
+                    ++humanScore
+                    console.log(`You win round ${round}! `)
+                    console.log(`You chose ${humanAnswer}`)
+                    console.log(`Computer chose ${computerChoice}`)
+                }   else if (humanAnswer == "scissors" && computerChoice == "paper") {
+                    ++humanScore
+                    console.log(`You win round ${round}! `)
+                    console.log(`You chose ${humanAnswer}`)
+                    console.log(`Computer chose ${computerChoice}`)
+                }   else if (humanAnswer == computerChoice) {
+                    console.log(`Tied round ${round} `)
+                    console.log(`You chose ${humanAnswer}`)
+                    console.log(`Computer chose ${computerChoice}`)
+                }   else if (humanAnswer == "paper" && computerChoice == "rock") {
+                    ++humanScore
+                    console.log(`You win round ${round}! `)
+                    console.log(`You chose ${humanAnswer}`)
+                    console.log(`Computer chose ${computerChoice}`)
+                }   else {
+                    ++computerScore
+                    console.log(`Computer wins round ${round}! `)
+                    console.log(`You chose ${humanAnswer}`)
+                    console.log(`Computer chose ${computerChoice}`)
+                }
+                console.log(`Your score: ${humanScore}`)
+                console.log(`Computer score: ${computerScore}`)
+                ++round;
+                
+                if (round < 6) {
+                const humanSelection = getHumanChoice();
+                const computerSelection = getComputerChoice();
+                return playRound(humanSelection, computerSelection);
+                }   else {
+                    if (humanScore > computerScore) {
+                        return `You won with ${humanScore} points`;
+                    }   else if (humanScore == computerScore) {
+                        return `its a tie with ${humanScore} points each`
+                    }   else {return `Computer won with ${computerScore} points`}
+                      
+                }
+            }
+            const humanSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
+            return playRound(humanSelection, computerSelection);
+        }
+        console.log(playGame())
+
+
+        
+
+
+    </Script>
+    
+</body>
+</html>
