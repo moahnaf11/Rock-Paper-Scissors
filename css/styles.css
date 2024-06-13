@@ -1,0 +1,64 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: lightgrey;
+    gap: 20px;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 36px;
+    background-color: lightyellow;
+    border: 3px solid red;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 10px;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    font-size: 24px;
+    font-weight: 500;
+    height: 50px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+.points {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: darkseagreen;
+    gap: 30px;
+    width: 350px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+button {
+    font-weight: bold;
+    font-size: 20px;
+    border: 2px solid blue;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 150px;
+}
